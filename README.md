@@ -2,12 +2,13 @@
 
 ## Project setup
 ```
-npm install
+npm run install:all
 ```
 
 ### Compiles and hot-reloads for development
 ```
 npm run serve
+npm run serve:san
 ```
 
 ### Compiles and minifies for production
