@@ -1,0 +1,47 @@
+<template>
+	<div>
+		<div class="{{$style.color}}">text: {{ text }}</div>
+		<s-button type="primary" on-click="changeText">chane text</s-button>
+		<s-button on-click="handleRouter">san 路由跳转</s-button>
+	</div>
+</template>
+
+<script>
+import { Button }  from 'santd'
+// import { connect } from 'san-store'
+// export default connect.san({
+// 	name: 'initName'
+// }, {
+// 	changeName: 'changeInitName'
+// })(
+	export default{
+		components: {
+			's-button': Button
+		},
+	initData() {
+		return {
+			text: 'Hi, San111'
+		}
+	},
+	attached() {
+		setTimeout(() => {
+			this.data.set('text', 'setTimeout text')
+		}, 1000);
+	},
+	// changeName() {
+	// 	this.actions.changeName('dispatch-changeName')
+	// },
+	changeText() {
+		this.data.set('text', 'change text')
+	},
+	handleRouter() {
+		window.$router.locator.redirect('/san/page2')
+	}
+ }
+//  )
+</script>
+<style module>
+.color {
+	color: lightcoral;
+}
+</style>
